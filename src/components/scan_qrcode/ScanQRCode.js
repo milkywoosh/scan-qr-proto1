@@ -18,8 +18,16 @@ const QrScanner = () => {
   return (
     <>
       <QrReader
-        onResult={Scan}
-        style={{ width: '100%' }}
+        constraints={{
+          facingMode: "environment",
+        }}
+        key="environment"
+        onResult={(result, error) => {
+          if (!!result) {
+            setData(result?.text);
+          }
+        }}
+        style={{width: "100%"}}
       />
       <p>{data}</p>
     </>
