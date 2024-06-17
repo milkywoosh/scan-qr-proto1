@@ -26,8 +26,10 @@ const QrScanner = () => {
         onResult={(result, error) => {
           if (result) {
             setData(result?.text);
+            return 
           } else {
             setData(error.message)
+            return 
           }
         }}
         style={{width: "50%"}}
