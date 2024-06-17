@@ -5,7 +5,7 @@ const QrScanner = () => {
   const [data, setData] = useState('NO RESULT');
 
   return (
-    <>
+    <div>
       <button onClick={()=> setData('NO RESULT')}> RESET </button>
       <QrReader
         constraints={{
@@ -15,17 +15,14 @@ const QrScanner = () => {
         onResult={(result, error) => {
           if (!!result) {
             setData(result?.text);
-            return 
-          } 
-          if (!!error) {
-            setData(error.message)
-            return 
-          }
+            return
+          }  
+      
         }}
-        style={{width: "80%"}}
+        style={{width: "100%"}}
       />
-      <p>Hasil:  {data}</p>
-    </>
+      <p>Hasil: {data}</p>
+    </div>
   );
 }
     
