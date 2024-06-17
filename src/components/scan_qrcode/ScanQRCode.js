@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { QrReader } from 'react-qr-reader';
 
 const QrScanner = () => {
-  const [data, setData] = useState('No result');
+  const [data, setData] = useState('NO RESULT');
 
   function Scan(result, error) {
     if (!!result) {
@@ -17,6 +17,7 @@ const QrScanner = () => {
 
   return (
     <>
+      <button onClick={()=> setData('NO RESULT')}> RESET </button>
       <QrReader
         constraints={{
           facingMode: {exact:"environment"},
