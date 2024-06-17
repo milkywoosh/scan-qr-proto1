@@ -28,9 +28,9 @@ const QrScanner = () => {
             setData(result?.text);
           }
         }}
-        style={{width: "100%"}}
+        style={{width: "90%"}}
       />
-      <p>{data}</p>
+      <p>Hasil:  {data}</p>
     </>
   );
 }
