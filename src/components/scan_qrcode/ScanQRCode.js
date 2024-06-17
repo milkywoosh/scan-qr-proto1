@@ -4,17 +4,6 @@ import { QrReader } from 'react-qr-reader';
 const QrScanner = () => {
   const [data, setData] = useState('NO RESULT');
 
-  function Scan(result, error) {
-    if (!!result) {
-      setData(result?.text);
-    }
-
-    if (!!error) {
-      console.info(error);
-    }
-  }
-
-
   return (
     <>
       <button onClick={()=> setData('NO RESULT')}> RESET </button>
@@ -24,15 +13,16 @@ const QrScanner = () => {
         }}
         key="environment"
         onResult={(result, error) => {
-          if (result) {
+          if (!!result) {
             setData(result?.text);
             return 
-          } else {
+          } 
+          if (!!error) {
             setData(error.message)
             return 
           }
         }}
-        style={{width: "50%"}}
+        style={{width: "80%"}}
       />
       <p>Hasil:  {data}</p>
     </>
