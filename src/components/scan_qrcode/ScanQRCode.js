@@ -24,11 +24,13 @@ const QrScanner = () => {
         }}
         key="environment"
         onResult={(result, error) => {
-          if (!!result) {
+          if (result) {
             setData(result?.text);
+          } else {
+            setData(error.message)
           }
         }}
-        style={{width: "90%"}}
+        style={{width: "50%"}}
       />
       <p>Hasil:  {data}</p>
     </>
