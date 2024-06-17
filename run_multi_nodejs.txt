@@ -1,0 +1,7 @@
+install nvm package manager
+
+install specific node version
+=> nvm install v18.20.3 64-bit
+
+check installed node version
+=> nvm list

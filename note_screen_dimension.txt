@@ -1,0 +1,8 @@
+AMOLED Infinity-U type, rounded corners 
+HD+ 720 × 1600
+
+reference: 
+https://medium.com/readytowork-org/implementing-a-qr-code-scanner-in-react-4c8f4e3c6f2e
+
+- Employ flexible units like em, rem, vw, and vh instead of fixed pixels.
+- test in

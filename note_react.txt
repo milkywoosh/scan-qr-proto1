@@ -1,0 +1,7 @@
+install react : npx create-react-app my-app
+
+=== purpose of this project ==
+create scan function: able to scan qrcode from phone camera with this react-app
+
+=== type of UI ==
+create new tab within SPA

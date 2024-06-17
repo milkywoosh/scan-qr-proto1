@@ -1,0 +1,14 @@
+.guide-style{
+    margin-bottom: 400px;
+    background-color: black;
+    border: 1px solid white;
+    margin: 3px;
+}
+
+ul {
+    list-style-type: square;
+}
+
+li {
+    /* text-align:justify; */
+}
