@@ -19,7 +19,7 @@ const QrScanner = () => {
     <>
       <QrReader
         constraints={{
-          facingMode: "environment",
+          facingMode: {exact:"user"},
         }}
         key="environment"
         onResult={(result, error) => {
