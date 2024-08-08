@@ -24,9 +24,21 @@ const App = () => {
   const closeTab = (tabName) => {
     if (tabs.length === 1) return; // Prevent closing the last tab
  
+    let currIndex = [...tabs].indexOf(tabName)
+  
     const newTabs = tabs.filter((tab, i) => tab !== tabName);
     setTabs([...newTabs]);
-    setActiveTab(activeTab)
+    // setActiveTab([...newTabs][0]) // set jadi page awal
+    // setActiveTab([]) // set jadi kosong page [OKE]
+    if ([...newTabs][currIndex]) {
+      setActiveTab([...newTabs][currIndex]) // set jadi page sebelah kanan
+    } else {
+      currIndex-=1
+      setActiveTab([...newTabs][currIndex]) 
+    }
+    // keep track current delete +1 index
+    // setActiveTab([...newTabs][newTabs.length-1]) // set jadi page akhir [OKE]
+
   };
   
 
@@ -46,6 +58,8 @@ const App = () => {
               return (<div key={index} className={`tab ${tab === activeTab ? 'active' : ''}`} >
                 {/* permasalahan closure, saat "v" di click, dia sekaligus hit setActiveTab(), ini berbahaya ! */}
                 <button className='button-close' onClick={()=> closeTab(tab)}>x</button>
+
+                {/* problem: ketika click closeTab, page masih gantung, harusnya ganti! */}
                 <div onClick={()=> setActiveTab(tab)}> {tab}</div>  
                 {/* ketika close dipanggil, disaat yg bersamaan jg  hit setActiveTab(), ini berbahaya!*/}
               </div>)
