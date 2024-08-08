@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import { QrReader } from 'react-qr-reader';
+// import { useState } from 'react';
+// import { QrReader } from 'react-qr-reader';
 
 const QrScanner = () => {
-  const [data, setData] = useState('NO RESULT');
+  // const [data, setData] = useState('NO RESULT');
 
   return (
     <div>
-      <button onClick={()=> setData('NO RESULT')}> RESET </button>
+      <h1>Currently Not Active</h1>
+      {/* MATIIN DULU */}
+      {/* <button onClick={()=> setData('NO RESULT')}> RESET </button>
       <QrReader
         constraints={{
           facingMode: {exact:"environment"},
@@ -21,7 +23,7 @@ const QrScanner = () => {
         }}
         style={{width: "100%"}}
       />
-      <p>Hasil: {data}</p>
+      <p>Hasil: {data}</p> */}
     </div>
   );
 }
